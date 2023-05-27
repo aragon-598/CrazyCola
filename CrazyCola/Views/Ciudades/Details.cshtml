@@ -7,29 +7,26 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Ciudad</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pais.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pais.Nombre)
-        </dd>
-
-    </dl>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <td>@Html.DisplayFor(model => model.Nombre)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Pais.Nombre)</th>
+                <td>@Html.DisplayFor(model => model.Pais.Nombre)</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CiudadId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Edit", new { id = Model.CiudadId })" class="btn btn-primary">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">
+        <i class="fas fa-list"></i> Back to List
+    </a>
 </p>
